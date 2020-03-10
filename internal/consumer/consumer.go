@@ -14,7 +14,7 @@
 package consumer
 
 import (
-	"github.com/consumer-superhero-delete/internal/config"
+	"github.com/superhero-match/consumer-superhero-delete/internal/config"
 	"time"
 
 	"github.com/segmentio/kafka-go"
@@ -29,9 +29,8 @@ type Consumer struct {
 func NewConsumer(cfg *config.Config) *Consumer {
 	r := kafka.NewReader(kafka.ReaderConfig{
 		Brokers:        cfg.Consumer.Brokers,
-		GroupID:        cfg.Consumer.GroupID,
 		Topic:          cfg.Consumer.Topic,
-		QueueCapacity:  int(1),
+		QueueCapacity:  int(10),
 		MaxWait:        time.Second,
 	})
 
