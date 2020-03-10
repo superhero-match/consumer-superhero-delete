@@ -15,7 +15,7 @@ package es
 
 import (
 	"fmt"
-	"github.com/consumer-superhero-delete/internal/config"
+	"github.com/superhero-match/consumer-superhero-delete/internal/config"
 	elastic "gopkg.in/olivere/elastic.v7"
 )
 

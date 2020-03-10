@@ -17,7 +17,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/consumer-superhero-delete/internal/consumer/model"
+	"github.com/superhero-match/consumer-superhero-delete/internal/consumer/model"
 )
 
 // Read consumes the Kafka topic and stores the newly registered superhero to DB and Elasticsearch.

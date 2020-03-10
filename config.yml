@@ -14,4 +14,3 @@ db:
 consumer:
   brokers: ['192.168.178.26:9092']
   topic: 'delete.municipality.superhero'
-  group_id: 'consumer-delete-group'

@@ -14,10 +14,10 @@
 package reader
 
 import (
-	"github.com/consumer-superhero-delete/internal/config"
-	"github.com/consumer-superhero-delete/internal/consumer"
-	"github.com/consumer-superhero-delete/internal/db"
-	"github.com/consumer-superhero-delete/internal/es"
+	"github.com/superhero-match/consumer-superhero-delete/internal/config"
+	"github.com/superhero-match/consumer-superhero-delete/internal/consumer"
+	"github.com/superhero-match/consumer-superhero-delete/internal/db"
+	"github.com/superhero-match/consumer-superhero-delete/internal/es"
 )
 
 // Reader holds all the data relevant.
