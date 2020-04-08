@@ -14,8 +14,8 @@
 package db
 
 // DeleteSuperhero saves newly registered Superhero.
-func(db *DB) DeleteSuperhero(id string) error {
-	_, err := db.stmtDeleteSuperhero.Exec(id)
+func(db *DB) DeleteSuperhero(id string, deletedAt string) error {
+	_, err := db.stmtDeleteSuperhero.Exec(id, deletedAt)
 	if err != nil {
 		return err
 	}

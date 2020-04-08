@@ -1,16 +1,22 @@
 es:
-  host: '192.168.178.26'
+  host: '192.168.0.105'
   port: '9200'
   cluster: 'superheromatch'
   index: 'superhero'
 
 db:
-  host: 'localhost'
+  host: '192.168.0.101'
   port: 3306
-  user: 'root'
-  password: 'Kolian18**'
+  user: 'dev'
+  password: 'password'
   name: 'municipality'
 
 consumer:
-  brokers: ['192.168.178.26:9092']
+  brokers: ['192.168.0.105:9092']
   topic: 'delete.municipality.superhero'
+
+health:
+  address: '192.168.0.101'
+  port: ':8060'
+  shutdown_endpoint: '/api/v1/consumer_superhero_delete_health/shutdown'
+  content_type: 'application/json'

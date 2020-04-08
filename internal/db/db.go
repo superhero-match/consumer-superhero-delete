@@ -45,7 +45,7 @@ func NewDB(cfg *config.Config) (dbs *DB, err error) {
 		return nil, err
 	}
 
-	stmtDel, err := db.Prepare(`call delete_superhero(?)`)
+	stmtDel, err := db.Prepare(`call delete_superhero(?,?)`)
 	if err != nil {
 		return nil, err
 	}

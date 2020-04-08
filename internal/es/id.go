@@ -16,7 +16,7 @@ package es
 import (
 	"context"
 	"errors"
-	"gopkg.in/olivere/elastic.v7"
+	elastic "github.com/olivere/elastic/v7"
 )
 
 // GetDocumentID fetches document source id, it is needed for update function.
