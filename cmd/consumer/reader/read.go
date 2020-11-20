@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2019 - 2020 MWSOFT
+  Copyright (C) 2019 - 2021 MWSOFT
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -85,7 +85,7 @@ func (r *Reader) Read() error {
 			}
 		}
 
-		err = r.DB.DeleteSuperhero(s.ID, time.Now().UTC().Format(r.TimeFormat))
+		err = r.DB.DeleteSuperhero(s.ID, s.DeletedAt)
 		if err != nil {
 			r.Logger.Error(
 				"failed to delete duperhero from database",

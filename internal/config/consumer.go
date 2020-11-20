@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2019 - 2020 MWSOFT
+  Copyright (C) 2019 - 2021 MWSOFT
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -15,6 +15,7 @@ package config
 
 // Consumer holds the configuration values for the Kafka consumer.
 type Consumer struct {
-	Brokers []string `env:"KAFKA_BROKERS" default:"[192.168.0.105:9092]"`
-	Topic   string   `env:"KAFKA_STORE_MUNICIPALITY_SUPERHERO_TOPIC" default:"delete.municipality.superhero"`
+	Brokers []string `env:"KAFKA_BROKERS" yaml:"brokers" default:"[192.168.0.64:9092]"`
+	Topic   string   `env:"KAFKA_DELETE_MUNICIPALITY_SUPERHERO_TOPIC" yaml:"topic" default:"delete.municipality.superhero"`
+	GroupID string   `env:"KAFKA_SUPERHERO_DELETE_GROUP" yaml:"group_id" default:"consumer.superhero.delete.group"`
 }
