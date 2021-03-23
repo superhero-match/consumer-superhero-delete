@@ -88,7 +88,7 @@ func (r *Reader) Read() error {
 		err = r.DB.DeleteSuperhero(s.ID, s.DeletedAt)
 		if err != nil {
 			r.Logger.Error(
-				"failed to delete duperhero from database",
+				"failed to delete superhero from database",
 				zap.String("err", err.Error()),
 				zap.String("time", time.Now().UTC().Format(r.TimeFormat)),
 			)
