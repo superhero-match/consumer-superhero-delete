@@ -17,20 +17,25 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/superhero-match/consumer-superhero-delete/internal/config"
-
 	_ "github.com/go-sql-driver/mysql" // MySQL driver.
+
+	"github.com/superhero-match/consumer-superhero-delete/internal/config"
 )
 
-// DB holds the database connection.
-type DB struct {
-	DB *sql.DB
+// DB interface defines database methods.
+type DB interface {
+	DeleteSuperhero(id string, deletedAt string) error
+}
+
+// db holds the database connection.
+type db struct {
+	DB                  *sql.DB
 	stmtDeleteSuperhero *sql.Stmt
 }
 
 // NewDB returns database.
-func NewDB(cfg *config.Config) (dbs *DB, err error) {
-	db, err := sql.Open(
+func NewDB(cfg *config.Config) (dbs DB, err error) {
+	dtbs, err := sql.Open(
 		"mysql",
 		fmt.Sprintf(
 			"%s:%s@tcp(%s:%d)/%s",
@@ -45,13 +50,13 @@ func NewDB(cfg *config.Config) (dbs *DB, err error) {
 		return nil, err
 	}
 
-	stmtDel, err := db.Prepare(`call delete_superhero(?,?)`)
+	stmtDel, err := dtbs.Prepare(`call delete_superhero(?,?)`)
 	if err != nil {
 		return nil, err
 	}
 
-	return &DB{
-		DB: db,
+	return &db{
+		DB:                  dtbs,
 		stmtDeleteSuperhero: stmtDel,
 	}, nil
 }
