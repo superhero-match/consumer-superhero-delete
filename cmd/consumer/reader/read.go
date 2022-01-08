@@ -1,5 +1,5 @@
 /*
-  Copyright (C) 2019 - 2021 MWSOFT
+  Copyright (C) 2019 - 2022 MWSOFT
   This program is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -24,7 +24,7 @@ import (
 	"github.com/superhero-match/consumer-superhero-delete/internal/consumer/model"
 )
 
-// Read consumes the Kafka topic and stores the newly registered superhero to DB and Elasticsearch.
+// Read consumes the Kafka topic and deletes the superhero from DB and Elasticsearch.
 func (r *reader) Read() error {
 	ctx := context.Background()
 
