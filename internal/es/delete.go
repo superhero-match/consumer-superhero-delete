@@ -19,7 +19,7 @@ import (
 )
 
 // DeleteSuperhero saves newly registered superhero in Elasticsearch.
-func (es *ES) DeleteSuperhero(id string) error {
+func (es *es) DeleteSuperhero(id string) error {
 	sourceID, err := es.GetDocumentID(id)
 	if err != nil {
 		return err
