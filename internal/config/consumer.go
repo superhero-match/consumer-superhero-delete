@@ -15,7 +15,7 @@ package config
 
 // Consumer holds the configuration values for the Kafka consumer.
 type Consumer struct {
-	Brokers []string `env:"KAFKA_BROKERS" yaml:"brokers" default:"[192.168.0.64:9092]"`
+	Brokers []string `env:"KAFKA_BROKERS" yaml:"brokers" default:"[192.168.1.229:9092]"`
 	Topic   string   `env:"KAFKA_DELETE_MUNICIPALITY_SUPERHERO_TOPIC" yaml:"topic" default:"delete.municipality.superhero"`
 	GroupID string   `env:"KAFKA_SUPERHERO_DELETE_GROUP" yaml:"group_id" default:"consumer.superhero.delete.group"`
 }
